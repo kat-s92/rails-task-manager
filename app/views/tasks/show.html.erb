@@ -1,7 +1,12 @@
 <h1>Your Task:</h1>
-<h2><%= @task.title%></h2>
-<p><%= @task.details %></p>
+<h2>To Do: <%= @task.title%></h2>
+<h3>Description: <%= @task.details %></h3>
 <p><%= @task.completed %></p>
 </ol>
 <li><%= link_to "Edit Task", edit_task_path(@task) %></li>
-<li><%= link_to "Back To List", tasks_path(@task) %></li>
+<li><%= link_to "Back To List", tasks_path %></li>
+
+<li><%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></li>
