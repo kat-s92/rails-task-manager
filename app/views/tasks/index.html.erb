@@ -1,0 +1,6 @@
+<h1>Your Tasks:</h1>
+<ol><% @tasks.each do |task|%>
+<li><%= link_to task.title, task_path(task.id) %></li>
+<%end  %>
+</ol>
+<li><%= link_to "Create Task", tasks_new_path %></li>
